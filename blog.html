@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Blog | Health Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-gray-800">
+    <nav class="bg-white shadow-sm p-4">
+      <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <a
+          href="index.html"
+          class="text-blue-600 font-bold flex items-center gap-2"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Practice
+        </a>
+        <span class="text-gray-400 text-sm">Patient Education Portal</span>
+      </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <div id="blog-index">
+        <h1 class="text-4xl font-bold mb-10 text-center">
+          Latest Health Articles
+        </h1>
+        <div class="grid gap-8">
+          <article
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border-l-4 border-blue-500"
+            onclick="navigateToPost('vaccination')"
+          >
+            <span
+              class="text-blue-600 text-sm font-bold uppercase tracking-widest"
+              >Prevention</span
+            >
+            <h2 class="text-2xl font-bold mt-2 mb-4">
+              The Importance of Routine Vaccination
+            </h2>
+            <p class="text-gray-600 mb-4">
+              Staying up to date with vaccines is the most effective way to
+              protect yourself and your community from preventable diseases...
+            </p>
+            <span class="text-blue-600 font-semibold">Read Full Article →</span>
+          </article>
+
+          <article
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border-l-4 border-green-500"
+            onclick="navigateToPost('diabetes')"
+          >
+            <span
+              class="text-green-600 text-sm font-bold uppercase tracking-widest"
+              >Chronic Care</span
+            >
+            <h2 class="text-2xl font-bold mt-2 mb-4">
+              Effective Diabetes Management Strategies
+            </h2>
+            <p class="text-gray-600 mb-4">
+              Managing blood sugar is a daily journey. Learn about the latest
+              tools and lifestyle changes that make a real difference...
+            </p>
+            <span class="text-green-600 font-semibold"
+              >Read Full Article →</span
+            >
+          </article>
+
+          <article
+            class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border-l-4 border-purple-500"
+            onclick="navigateToPost('womens-health')"
+          >
+            <span
+              class="text-purple-600 text-sm font-bold uppercase tracking-widest"
+              >Wellness</span
+            >
+            <h2 class="text-2xl font-bold mt-2 mb-4">
+              Prioritizing Women's Health at Every Stage
+            </h2>
+            <p class="text-gray-600 mb-4">
+              From annual screenings to hormonal health, we discuss the
+              essential check-ups every woman should schedule...
+            </p>
+            <span class="text-purple-600 font-semibold"
+              >Read Full Article →</span
+            >
+          </article>
+        </div>
+      </div>
+
+      <div id="post-view" class="hidden">
+        <div
+          id="post-content"
+          class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100"
+        ></div>
+        <div class="mt-8 text-center">
+          <button
+            onclick="window.location.href = 'blog.html'"
+            class="bg-gray-200 hover:bg-gray-300 px-6 py-2 rounded-full font-medium transition"
+          >
+            Return to All Posts
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const blogData = {
+        vaccination: {
+          title: 'The Importance of Routine Vaccination',
+          category: 'Prevention',
+          content: `
+                    <p class="mb-4">Vaccinations are a cornerstone of public health. By mimicking an infection, vaccines help your immune system develop antibodies without you having to get sick first.</p>
+                    <h3 class="text-xl font-bold mt-6 mb-2">Why it matters:</h3>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li>Protects against seasonal flu and pneumonia.</li>
+                        <li>Prevents the resurgence of eradicated diseases.</li>
+                        <li>Protects vulnerable populations (infants and seniors).</li>
+                    </ul>
+                    <p>Consult with our primary care team to ensure your immunization record is up to date.</p>`,
+        },
+        diabetes: {
+          title: 'Effective Diabetes Management Strategies',
+          category: 'Chronic Care',
+          content: `
+                    <p class="mb-4">Managing Type 2 Diabetes requires a multi-faceted approach. It’s not just about medication; it’s about understanding how your body responds to food and activity.</p>
+                    <h3 class="text-xl font-bold mt-6 mb-2">Key Focus Areas:</h3>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li><strong>Monitoring:</strong> Regular blood glucose checks.</li>
+                        <li><strong>Nutrition:</strong> Focusing on low-glycemic index foods.</li>
+                        <li><strong>Movement:</strong> 30 minutes of moderate activity daily.</li>
+                    </ul>
+                    <p>Our practice offers comprehensive blood pressure and diabetes management programs.</p>`,
+        },
+        'womens-health': {
+          title: "Prioritizing Women's Health at Every Stage",
+          category: 'Wellness',
+          content: `
+                    <p class="mb-4">Women's health needs evolve significantly throughout life. From preventative screenings like Pap smears to bone density scans, staying proactive is key.</p>
+                    <h3 class="text-xl font-bold mt-6 mb-2">Essential Check-ups:</h3>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li>Annual Physicals and Bloodwork.</li>
+                        <li>Mammograms (based on age/risk).</li>
+                        <li>Mental health and stress management screenings.</li>
+                    </ul>
+                    <p>Schedule a visit with our providers to discuss a personalized wellness plan.</p>`,
+        },
+      };
+
+      function navigateToPost(id) {
+        // Update URL without refreshing to allow deep linking
+        const newurl =
+          window.location.protocol +
+          '//' +
+          window.location.host +
+          window.location.pathname +
+          '?id=' +
+          id;
+        window.history.pushState({ path: newurl }, '', newurl);
+        renderPost();
+      }
+
+      function renderPost() {
+        const params = new URLSearchParams(window.location.search);
+        const postId = params.get('id');
+
+        if (postId && blogData[postId]) {
+          const post = blogData[postId];
+          document.getElementById('blog-index').classList.add('hidden');
+          document.getElementById('post-view').classList.remove('hidden');
+          document.getElementById('post-content').innerHTML = `
+                    <h1 class="text-4xl font-extrabold mb-4 text-slate-900">${post.title}</h1>
+                    <div class="inline-block px-3 py-1 rounded bg-blue-100 text-blue-700 text-sm font-bold mb-8">${post.category}</div>
+                    <div class="prose prose-blue max-w-none text-lg leading-relaxed text-gray-700">
+                        ${post.content}
+                    </div>
+                `;
+        } else {
+          document.getElementById('blog-index').classList.remove('hidden');
+          document.getElementById('post-view').classList.add('hidden');
+        }
+      }
+
+      // Run on load
+      window.onload = renderPost;
+      // Handle browser back button
+      window.onpopstate = renderPost;
+    </script>
+  </body>
+</html>

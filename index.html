@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wellness Primary Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-gray-800">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="text-2xl font-bold text-blue-600">WellnessCare</div>
+          <div class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-blue-600">Home</a>
+            <a href="#providers" class="hover:text-blue-600">Our Providers</a>
+            <a href="#services" class="hover:text-blue-600">Our Services</a>
+            <a href="#insurance" class="hover:text-blue-600">Insurance</a>
+            <a href="#appointment" class="hover:text-blue-600">Appointment</a>
+            <a href="#contact" class="hover:text-blue-600">Contact Us</a>
+            <a href="blog.html" class="hover:text-blue-600">Blog</a>
+          </div>
+          <button class="md:hidden" onclick="toggleMenu()">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t px-4 py-4 space-y-2"
+      >
+        <a href="#" class="block hover:text-blue-600">Home</a>
+        <a href="blog.html" class="block hover:text-blue-600">Blog</a>
+      </div>
+    </nav>
+
+    <header
+      class="relative h-[500px] flex items-center justify-center text-white"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"
+        class="absolute inset-0 w-full h-full object-cover brightness-50"
+        alt="Clinic"
+      />
+      <div class="relative text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Your Health, Our Priority
+        </h1>
+        <p class="text-xl mb-8">
+          Comprehensive primary care for you and your family in a modern, caring
+          environment.
+        </p>
+        <a
+          href="#appointment"
+          class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition"
+          >Book Visit</a
+        >
+      </div>
+    </header>
+
+    <section id="providers" class="py-16 max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Meet Our Care Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow">
+          <img
+            src="https://i.pravatar.cc/150?u=dr1"
+            class="w-32 h-32 rounded-full mb-4 object-cover"
+            alt="Dr. Smith"
+          />
+          <h3 class="text-xl font-bold">Dr. Jane Smith, MD</h3>
+          <p class="text-center mt-2 text-gray-600">
+            Board-certified physician with 15 years of experience in internal
+            medicine.
+          </p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow">
+          <img
+            src="https://i.pravatar.cc/150?u=dr2"
+            class="w-32 h-32 rounded-full mb-4 object-cover"
+            alt="Dr. Doe"
+          />
+          <h3 class="text-xl font-bold">Dr. John Doe, DO</h3>
+          <p class="text-center mt-2 text-gray-600">
+            Specializing in preventative care and holistic patient wellness.
+          </p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow">
+          <img
+            src="https://i.pravatar.cc/150?u=n1"
+            class="w-32 h-32 rounded-full mb-4 object-cover"
+            alt="Nurse Alex"
+          />
+          <h3 class="text-xl font-bold">Alex Rivera, NP</h3>
+          <p class="text-center mt-2 text-gray-600">
+            Nurse Practitioner dedicated to chronic disease management.
+          </p>
+        </div>
+        <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow">
+          <img
+            src="https://i.pravatar.cc/150?u=n2"
+            class="w-32 h-32 rounded-full mb-4 object-cover"
+            alt="Nurse Sarah"
+          />
+          <h3 class="text-xl font-bold">Sarah Chen, RN</h3>
+          <p class="text-center mt-2 text-gray-600">
+            Specialized in women's health and family education.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-16 bg-blue-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <h4 class="font-bold mb-2">Allergy & Immunology</h4>
+            <p class="text-sm text-gray-600 mb-4">
+              Testing and treatment for environmental and food allergies.
+            </p>
+            <a
+              href="blog.html?post=allergy"
+              class="text-blue-600 text-sm font-semibold"
+              >Read More →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <h4 class="font-bold mb-2">Primary Care</h4>
+            <p class="text-sm text-gray-600 mb-4">
+              Routine checkups and general health maintenance.
+            </p>
+            <a
+              href="blog.html?post=primary-care"
+              class="text-blue-600 text-sm font-semibold"
+              >Read More →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <h4 class="font-bold mb-2">Diabetes Management</h4>
+            <p class="text-sm text-gray-600 mb-4">
+              Personalized care plans for Type 1 and Type 2 diabetes.
+            </p>
+            <a
+              href="blog.html?post=diabetes"
+              class="text-blue-600 text-sm font-semibold"
+              >Read More →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insurance" class="py-16 max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Insurance Coverage</h2>
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <span class="bg-gray-200 px-4 py-2 rounded-full">Aetna</span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full"
+          >BlueCross BlueShield</span
+        >
+        <span class="bg-gray-200 px-4 py-2 rounded-full">Cigna</span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full">UnitedHealthcare</span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full">Humana</span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full">Medicare</span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full"
+          >Kaiser Permanente</span
+        >
+        <span class="bg-gray-200 px-4 py-2 rounded-full">Centene</span>
+        <span class="bg-gray-200 px-4 py-2 rounded-full"
+          >Molina Healthcare</span
+        >
+        <span class="bg-gray-200 px-4 py-2 rounded-full">WellCare</span>
+      </div>
+      <button
+        onclick="openChatbot()"
+        class="bg-blue-100 text-blue-600 px-6 py-2 rounded hover:bg-blue-200 font-bold"
+      >
+        Check More Coverage
+      </button>
+    </section>
+
+    <section id="appointment" class="py-16 bg-white">
+      <div
+        class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+      >
+        <img
+          src="./helpCenter.png"
+          class="w-full md:w-1/2 rounded-lg shadow-xl"
+          alt="Appointment"
+        />
+        <div class="text-center md:text-left">
+          <h2 class="text-3xl font-bold mb-4">Ready to see a doctor?</h2>
+          <p class="mb-6 text-gray-600">
+            Scheduling is easy. Click below to chat with our booking assistant.
+          </p>
+          <button
+            onclick="openChatbot()"
+            class="bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition"
+          >
+            Schedule Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-900 text-white py-16 px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Office Hours</h3>
+          <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+          <p>Saturday: 9:00 AM - 1:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+          <p>Phone: (555) 123-4567</p>
+          <p>Email: contact@wellnesscare.com</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Address</h3>
+          <p>123 Medical Park Lane</p>
+          <p>Suite 100, Healthcare City, ST 54321</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function openChatbot() {
+        alert('This would trigger your chatbot script!');
+        // Add your chatbot initialization code here
+      }
+    </script>
+  </body>
+</html>
